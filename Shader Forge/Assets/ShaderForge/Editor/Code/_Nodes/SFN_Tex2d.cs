@@ -7,8 +7,8 @@ using System.Collections;
 
 namespace ShaderForge {
 
-
-	public enum NoTexValue{White, Gray, Black, Bump};
+#pragma warning disable 618
+    public enum NoTexValue{White, Gray, Black, Bump};
 
 	[System.Serializable]
 	public class SFN_Tex2d : SF_Node {
@@ -301,7 +301,7 @@ namespace ShaderForge {
 				}
 			}
 
-			if( IsProperty() && Event.current.type == EventType.dragUpdated ) {
+			if( IsProperty() && Event.current.type == EventType.DragUpdated ) {
 				if(DragAndDrop.objectReferences.Length > 0){
 					Object dragObj = DragAndDrop.objectReferences[0];
 					if( dragObj is Texture2D || dragObj is ProceduralTexture || dragObj is RenderTexture) {
